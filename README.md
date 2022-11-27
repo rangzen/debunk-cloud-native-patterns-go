@@ -19,20 +19,23 @@ This pattern is very common to chain HTTP Func or in middlewares
 like in the [Gin](https://gin-gonic.com/) or the [Echo](https://echo.labstack.com/) frameworks,
 but it can make the code less understandable at the first reading for beginners. 
 
-* [Patterns](#patterns)
-  * [Stability Patterns](#stability-patterns)
-    * [Circuit Breaker](#circuit-breaker)
-    * [Debounce](#debounce)
-    * [Retry](#retry)
-    * [Throttle](#throttle)
-    * [Timeout](#timeout)
-  * [Concurrency Patterns](#concurrency-patterns)
-    * [Fan-in](#fan-in)
-    * [Fan-out](#fan-out)
-    * [Future](#future)
-    * [Horizontal Sharding](#horizontal-sharding)
-    * [Vertical Sharding](#vertical-sharding)
-* [References](#references)
+<!-- TOC -->
+* [Debunk Cloud Native Patterns in Go](#debunk-cloud-native-patterns-in-go)
+  * [Patterns](#patterns)
+    * [Stability Patterns](#stability-patterns)
+      * [Circuit Breaker](#circuit-breaker)
+      * [Debounce -- Work In Progress](#debounce----work-in-progress)
+      * [Retry -- Work In Progress](#retry----work-in-progress)
+      * [Throttle -- Work In Progress](#throttle----work-in-progress)
+      * [Timeout -- Work In Progress](#timeout----work-in-progress)
+    * [Concurrency Patterns](#concurrency-patterns)
+      * [Fan-in -- Work In Progress](#fan-in----work-in-progress)
+      * [Fan-out -- Work In Progress](#fan-out----work-in-progress)
+      * [Future -- Work In Progress](#future----work-in-progress)
+      * [Horizontal Sharding -- Work In Progress](#horizontal-sharding----work-in-progress)
+      * [Vertical Sharding -- Work In Progress](#vertical-sharding----work-in-progress)
+  * [References](#references)
+<!-- TOC -->
 
 ## Patterns
 
@@ -44,43 +47,44 @@ The structure of the repository follow the same taxonomy.
 
 Fail fast by returning an error if the called service send back too many errors.
 
-#### Debounce
+#### Debounce -- Work In Progress
 
-Work in Progress.
+Cache result and send it back until a new call is done after a duration (function-first),
+or after a certain duration after the last call (function-last).
 
-#### Retry
+#### Retry -- Work In Progress
 
-Work in Progress.
+Retry a failed call waiting for a certain duration and for a certain number of time.
 
-#### Throttle
+#### Throttle -- Work In Progress
 
-Work in Progress.
+Limit the maximum number of time per unit of time when you can call a function.
 
-#### Timeout
+#### Timeout -- Work In Progress
 
-Work in Progress.
+Allow a process to stop waiting after a certain period.
 
 ### Concurrency Patterns
 
-#### Fan-in
+#### Fan-in -- Work In Progress
 
-Work in Progress.
+Merge input sources.
 
-#### Fan-out
+#### Fan-out -- Work In Progress
 
-Work in Progress.
+Evenly distributes messages to multiple outputs.
 
-#### Future
+#### Future -- Work In Progress
 
-Work in Progress.
+Placeholder for a future value.
 
-#### Horizontal Sharding
+#### Horizontal Sharding -- Work In Progress
 
-Work in Progress.
+Split large data structure to localize effects of read/write locks across service instances.
 
-#### Vertical Sharding
+#### Vertical Sharding -- Work In Progress
 
-Work in Progress.
+Split large data structure to localize effects of read/write locks across a unique instance.
 
 ## References
 
